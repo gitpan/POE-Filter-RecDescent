@@ -18,6 +18,6 @@ BEGIN {
   startrule : "1"
             { [ 'StartRule' => [ $item[1] ] ] }
 _EOF_
-  my $rec = $f->get( q(1) );
-  is_deeply($rec, [ 'StartRule', [qw( 1 )] ], "Grammar" );
+  my $rec = $f->get( [ q(1) ] );
+  is_deeply($rec, [ [ 'StartRule', [qw( 1 )] ] ], "Grammar" );
 }

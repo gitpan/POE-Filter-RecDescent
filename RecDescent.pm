@@ -5,7 +5,7 @@ use Parse::RecDescent;
 use Carp qw(croak);
 use vars qw($VERSION);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub DEBUG() { 0 };
 #sub DEBUG() { 1 };
@@ -27,11 +27,11 @@ sub new {
 sub get {
   my ($self, $stream) = @_;
 
-  return $self->{parser}->startrule($stream);
+  return [ $self->{parser}->startrule(join('',@$stream)) ];
 }
 # }}}
-sub get_one_start { }
-sub get_one { }
+#sub get_one_start { }
+#sub get_one { }
 sub put { }
 sub get_pending { }
 
